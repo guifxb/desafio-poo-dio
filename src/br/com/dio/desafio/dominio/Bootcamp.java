@@ -21,7 +21,7 @@ public class Bootcamp {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
+    }    
 
     public String getDescricao() {
         return descricao;
@@ -46,6 +46,8 @@ public class Bootcamp {
     public void setDevsInscritos(Set<Dev> devsInscritos) {
         this.devsInscritos = devsInscritos;
     }
+
+  
 
     public Set<Conteudo> getConteudos() {
         return conteudos;
