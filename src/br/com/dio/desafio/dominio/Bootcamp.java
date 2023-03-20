@@ -47,6 +47,22 @@ public class Bootcamp {
         this.devsInscritos = devsInscritos;
     }
 
+    public void getRanking() {
+        List<Dev> ranking = this.devsInscritos.stream()
+            .sorted(Comparator.comparingDouble(Dev::calcularTotalXp).reversed())
+            .collect(Collectors.toList());
+
+        System.out.println("+--------+------------------+");
+        System.out.println("|   XP   |       DEV        |");
+        System.out.println("+--------+------------------+");
+
+        for (Dev dev : ranking) {
+            System.out.printf("| %6.2f | %-16s |\n", dev.calcularTotalXp(), dev.getNome());
+        }
+
+        System.out.println("+--------+------------------+");
+    }
+
   
 
     public Set<Conteudo> getConteudos() {
